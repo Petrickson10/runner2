@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b8cv176dw7gq5"]
+
+[ext_resource type="Texture2D" uid="uid://cwwjuepl72s02" path="res://Assets Godot Runner/Assets Godot Runner/mockup.png" id="1_k46e6"]
+
+[node name="Jogo" type="Node2D" unique_id=517475972]
+
+[node name="Fundo" type="Sprite2D" parent="." unique_id=578715688]
+texture = ExtResource("1_k46e6")
+
+[node name="Fundo2" type="Sprite2D" parent="." unique_id=1283610460]
+
+[node name="Chao" type="Sprite2D" parent="." unique_id=990420256]
+
+[node name="Chao2" type="Sprite2D" parent="." unique_id=1998158034]
+
+[node name="ChaoFisico" type="StaticBody2D" parent="." unique_id=806500893]
+
+[node name="CorpoChao" type="CollisionShape2D" parent="ChaoFisico" unique_id=1991230436]
