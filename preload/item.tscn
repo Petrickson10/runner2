@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://boka01qbd5hs7"]
+
+[ext_resource type="Texture2D" uid="uid://bvdn55o4w4554" path="res://Assets Godot Runner/Assets Godot Runner/enemies.png" id="1_08pde"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5th32"]
+atlas = ExtResource("1_08pde")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl1ni"]
+atlas = ExtResource("1_08pde")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7lk0"]
+atlas = ExtResource("1_08pde")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fb18y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5th32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bl1ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7lk0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qm15p"]
+size = Vector2(33, 38)
+
+[node name="Item" type="Area2D" unique_id=1478158860]
+
+[node name="ImagemItem" type="AnimatedSprite2D" parent="." unique_id=504253419]
+position = Vector2(3.8146973e-06, 3.8146973e-06)
+scale = Vector2(2.5833333, 2.5833333)
+sprite_frames = SubResource("SpriteFrames_fb18y")
+
+[node name="CorpoItem" type="CollisionShape2D" parent="." unique_id=113922554]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_qm15p")

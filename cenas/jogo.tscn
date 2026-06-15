@@ -5,9 +5,77 @@
 [ext_resource type="Texture2D" uid="uid://cttdpgdvfy2xu" path="res://Assets Godot Runner/Assets Godot Runner/foreground.png" id="2_32vai"]
 [ext_resource type="Texture2D" uid="uid://cu1f1dfo3beg5" path="res://Assets Godot Runner/Assets Godot Runner/middleground2.png" id="4_bkotw"]
 [ext_resource type="Texture2D" uid="uid://dgppolhfvsc3j" path="res://Assets Godot Runner/Assets Godot Runner/middleground1.png" id="5_dmxwg"]
+[ext_resource type="Texture2D" uid="uid://c3o3xpeddbsoh" path="res://Assets Godot Runner/Assets Godot Runner/player.png" id="6_dtkcs"]
+[ext_resource type="Script" uid="uid://bs2hqpweh55e" path="res://Scripts2/character_body_2d.gd" id="6_srya6"]
+[ext_resource type="Script" uid="uid://c45catxdirgsf" path="res://Scripts2/gerador.gd" id="8_v6mw0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmxwg"]
 size = Vector2(1150, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srya6"]
+atlas = ExtResource("6_dtkcs")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6mw0"]
+atlas = ExtResource("6_dtkcs")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c77ad"]
+atlas = ExtResource("6_dtkcs")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5cfb"]
+atlas = ExtResource("6_dtkcs")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfigh"]
+atlas = ExtResource("6_dtkcs")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_105i5"]
+atlas = ExtResource("6_dtkcs")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtkcs"]
+atlas = ExtResource("6_dtkcs")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8tqj5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srya6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6mw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c77ad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5cfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfigh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_105i5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtkcs")
+}],
+"loop": true,
+"name": &"pular",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_srya6"]
+size = Vector2(79, 86.5)
 
 [node name="Jogo" type="Node2D" unique_id=517475972]
 script = ExtResource("1_1frua")
@@ -42,21 +110,41 @@ position = Vector2(574, 637)
 shape = SubResource("RectangleShape2D_dmxwg")
 
 [node name="MeioAzul" type="Sprite2D" parent="." unique_id=1109641548]
-position = Vector2(573.5, 313)
+position = Vector2(0, 4)
 scale = Vector2(3.609375, 3.4777775)
 texture = ExtResource("4_bkotw")
+centered = false
 
 [node name="MeioAzul2" type="Sprite2D" parent="." unique_id=557190630]
-position = Vector2(1725.3578, 312.5)
+position = Vector2(1150, 3.9999695)
 scale = Vector2(3.5756721, 3.4833333)
 texture = ExtResource("4_bkotw")
+centered = false
 
 [node name="MeioPreto2" type="Sprite2D" parent="." unique_id=560089558]
-position = Vector2(1725, 315.49997)
+position = Vector2(1149.0002, 0)
 scale = Vector2(3.5875, 3.4611108)
 texture = ExtResource("5_dmxwg")
+centered = false
 
 [node name="MeioPreto" type="Sprite2D" parent="." unique_id=960467632]
-position = Vector2(573.5, 313.50003)
+position = Vector2(6.1035156e-05, 0)
 scale = Vector2(3.596875, 3.4833333)
 texture = ExtResource("5_dmxwg")
+centered = false
+
+[node name="Personagem" type="CharacterBody2D" parent="." unique_id=1694669139]
+script = ExtResource("6_srya6")
+
+[node name="Imagem" type="AnimatedSprite2D" parent="Personagem" unique_id=770656926]
+position = Vector2(95, 582)
+scale = Vector2(4.6666665, 4.6666665)
+sprite_frames = SubResource("SpriteFrames_8tqj5")
+animation = &"pular"
+
+[node name="Corpo" type="CollisionShape2D" parent="Personagem" unique_id=1995952422]
+position = Vector2(94.5, 566.25)
+shape = SubResource("RectangleShape2D_srya6")
+
+[node name="Gerador" type="Node2D" parent="." unique_id=2110429553]
+script = ExtResource("8_v6mw0")
