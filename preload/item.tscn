@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://boka01qbd5hs7"]
 
+[ext_resource type="Script" uid="uid://f568r6q2v2s2" path="res://preload/item.gd" id="1_5th32"]
 [ext_resource type="Texture2D" uid="uid://bvdn55o4w4554" path="res://Assets Godot Runner/Assets Godot Runner/enemies.png" id="1_08pde"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5th32"]
@@ -35,6 +36,7 @@ animations = [{
 size = Vector2(33, 38)
 
 [node name="Item" type="Area2D" unique_id=1478158860]
+script = ExtResource("1_5th32")
 
 [node name="ImagemItem" type="AnimatedSprite2D" parent="." unique_id=504253419]
 position = Vector2(3.8146973e-06, 3.8146973e-06)
@@ -44,3 +46,5 @@ sprite_frames = SubResource("SpriteFrames_fb18y")
 [node name="CorpoItem" type="CollisionShape2D" parent="." unique_id=113922554]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_qm15p")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,5 +1,6 @@
 extends CharacterBody2D
-
+var vida = 5
+var pontos = 0 # Adicione esta linha no seu script do Jogador
 
 var velocidade_pulo = -600
 func _physics_process(delta: float) -> void:

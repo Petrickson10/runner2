@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c3o3xpeddbsoh" path="res://Assets Godot Runner/Assets Godot Runner/player.png" id="6_dtkcs"]
 [ext_resource type="Script" uid="uid://bs2hqpweh55e" path="res://Scripts2/character_body_2d.gd" id="6_srya6"]
 [ext_resource type="Script" uid="uid://c45catxdirgsf" path="res://Scripts2/gerador.gd" id="8_v6mw0"]
+[ext_resource type="Script" uid="uid://c0crk7kxjr2cd" path="res://scripts2/gera_itens.gd" id="9_c77ad"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmxwg"]
 size = Vector2(1150, 20)
@@ -148,3 +149,6 @@ shape = SubResource("RectangleShape2D_srya6")
 
 [node name="Gerador" type="Node2D" parent="." unique_id=2110429553]
 script = ExtResource("8_v6mw0")
+
+[node name="GeraItens" type="Node2D" parent="." unique_id=1958916871]
+script = ExtResource("9_c77ad")
