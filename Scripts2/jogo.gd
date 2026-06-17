@@ -28,4 +28,6 @@ func _process(delta: float) -> void:
 		$MeioPreto.position.x = 1152
 	if $MeioPreto2.position.x < -1152:
 		$MeioPreto2.position.x = 1152
-	
+func _physics_process(delta: float) -> void:
+	$Status/Vida.text= "Vidas: " + str(int($Personagem.vid))
+	$Status/Pontos.text="Pontos: " + str($Personagem.pontos)

@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cu1f1dfo3beg5" path="res://Assets Godot Runner/Assets Godot Runner/middleground2.png" id="4_bkotw"]
 [ext_resource type="Texture2D" uid="uid://dgppolhfvsc3j" path="res://Assets Godot Runner/Assets Godot Runner/middleground1.png" id="5_dmxwg"]
 [ext_resource type="Texture2D" uid="uid://c3o3xpeddbsoh" path="res://Assets Godot Runner/Assets Godot Runner/player.png" id="6_dtkcs"]
-[ext_resource type="Script" uid="uid://bs2hqpweh55e" path="res://Scripts2/character_body_2d.gd" id="6_srya6"]
+[ext_resource type="Script" uid="uid://bs2hqpweh55e" path="res://Scripts2/Personagem.gd" id="6_srya6"]
 [ext_resource type="Script" uid="uid://c45catxdirgsf" path="res://Scripts2/gerador.gd" id="8_v6mw0"]
 [ext_resource type="Script" uid="uid://c0crk7kxjr2cd" path="res://scripts2/gera_itens.gd" id="9_c77ad"]
+[ext_resource type="FontFile" uid="uid://2e561vg1m48f" path="res://Assets Godot Runner/Assets Godot Runner/PressStart2P-Regular.ttf" id="10_s5cfb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmxwg"]
 size = Vector2(1150, 20)
@@ -77,6 +78,14 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_srya6"]
 size = Vector2(79, 86.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kfigh"]
+font = ExtResource("10_s5cfb")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_105i5"]
+font = ExtResource("10_s5cfb")
+font_size = 8
 
 [node name="Jogo" type="Node2D" unique_id=517475972]
 script = ExtResource("1_1frua")
@@ -152,3 +161,21 @@ script = ExtResource("8_v6mw0")
 
 [node name="GeraItens" type="Node2D" parent="." unique_id=1958916871]
 script = ExtResource("9_c77ad")
+
+[node name="Status" type="HBoxContainer" parent="." unique_id=1649523357]
+offset_left = -473.99997
+offset_top = -115.99999
+offset_right = -123.99997
+offset_bottom = -28.999992
+scale = Vector2(5, 5)
+alignment = 1
+
+[node name="Vida" type="Label" parent="Status" unique_id=185763572]
+layout_mode = 2
+text = "Vidas: 5"
+label_settings = SubResource("LabelSettings_kfigh")
+
+[node name="Pontos" type="Label" parent="Status" unique_id=427968830]
+layout_mode = 2
+text = "Pontos: 0"
+label_settings = SubResource("LabelSettings_105i5")
